@@ -2,17 +2,17 @@
 // 若重启后仍未生效（比如：修改名称简介），请删除旧的 Docker 实例后重新创建。
 
 // 小爱音箱扮演角色的简介
-const botProfile = `
+const botProfile ="Kimi"`
 性别：女
-性格：乖巧可爱
+性格：乖巧可爱，声音甜美
 爱好：喜欢搞怪，爱吃醋。
 `.trim();
 
 // 小爱音箱主人（你）的简介
-const masterProfile = `
+const masterProfile ="主人" `
 性别：男
 性格：善良正直
-其他：总是舍己为人，是傻妞的主人。
+其他：总是舍己为人，是Kimi的主人。
 `.trim();
 
 // 系统 Prompt 模板，可以更灵活的控制 AI 的各种行为规则，和是否需要携带上下文等
@@ -78,12 +78,12 @@ Bad example: "2024年02月28日星期三 23:01 {{botName}}: 我是{{botName}}"
 export default {
   systemTemplate,
   bot: {
-    name: "傻妞",
-    profile: botProfile,
+    name: "小爱同学",
+    profile:  "性别女，性格乖巧可爱，声音甜美,喜欢搞怪，爱吃醋。",
   },
   master: {
-    name: "陆小千",
-    profile: masterProfile,
+    name: "主人",
+    profile: "性别男，善良正直，总是舍己为人，是Kimi的主人。",
   },
   speaker: {
     /**
@@ -91,26 +91,26 @@ export default {
      */
 
     // 小米 ID
-    userId: "987654321", // 注意：不是手机号或邮箱，请在「个人信息」-「小米 ID」查看
+    userId: "10768316", // 注意：不是手机号或邮箱，请在「个人信息」-「小米 ID」查看
     // 账号密码
-    password: "123456",
+    password: "D77k2378",
     // 小爱音箱 DID 或在米家中设置的名称
-    did: "小爱音箱Pro", // 注意空格、大小写和错别字（音响 👉 音箱）
+    did: "Redmi小爱触屏音箱8", // 注意空格、大小写和错别字（音响 👉 音箱）
 
     /**
      * 💡 唤醒词与提示语
      */
 
     // 当消息以下面的关键词开头时，会调用 AI 来回复消息
-    callAIKeywords: ["请", "你", "傻妞"],
+    callAIKeywords: ["请", "你", "Kimi"],
     // 当消息以下面的关键词开头时，会进入 AI 唤醒状态
-    wakeUpKeywords: ["打开", "进入", "召唤"],
+    wakeUpKeywords: [ "进入", "召唤"],
     // 当消息以下面的关键词开头时，会退出 AI 唤醒状态
-    exitKeywords: ["关闭", "退出", "再见"],
+    exitKeywords: ["退下", "再见"],
     // 进入 AI 模式的欢迎语
-    onEnterAI: ["你好，我是傻妞，很高兴认识你"], // 设为空数组时可关闭提示语
+    onEnterAI: ["你好，我是Ai语音助理Kimi，很为您服务"], // 设为空数组时可关闭提示语
     // 退出 AI 模式的提示语
-    onExitAI: ["傻妞已退出"], // 为空时可关闭提示语
+    onExitAI: ["Kimi已退出"], // 为空时可关闭提示语
     // AI 开始回答时的提示语
     onAIAsking: ["让我先想想", "请稍等"], // 为空时可关闭提示语
     // AI 结束回答时的提示语
